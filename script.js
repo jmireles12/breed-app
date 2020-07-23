@@ -2,7 +2,7 @@ function getDogImages(breed) {
     fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
     .then(response => response.json())
     .then(responseJson => displayResult(responseJson))
-    .catch(error => alert(responseJson.message));
+    .catch(error => alert('Network error'));
 }
 
 function displayResult(responseJson) {
