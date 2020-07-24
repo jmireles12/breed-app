@@ -8,6 +8,8 @@ function getDogImages(breed) {
 function displayResult(responseJson) {
     console.log(responseJson)
     if (responseJson.status === "error") {
+        $('.result').html('');
+        $('input[type="search"]').val('');
         alert(responseJson.message)
     } else {
         $('.result-img').replaceWith(`<img src="${responseJson.message}" class="result-img">`)
