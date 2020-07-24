@@ -9,9 +9,10 @@ function displayResult(responseJson) {
     console.log(responseJson)
     if (responseJson.status === "error") {
         alert(responseJson.message)
+    } else {
+        $('.result-img').replaceWith(`<img src="${responseJson.message}" class="result-img">`)
+        $('.result').removeClass('hidden');
     }
-    $('.result-img').replaceWith(`<img src="${responseJson.message}" class="result-img">`)
-    $('.result').removeClass('hidden');
 }
 
 function watchForm() {
