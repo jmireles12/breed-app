@@ -6,13 +6,13 @@ function getDogImages(breed) {
 }
 
 function displayResult(responseJson) {
+
     console.log(responseJson)
     if (responseJson.status === "error") {
-        $('.result').html('');
-        $('input[type="search"]').val('');
         alert(responseJson.message)
+        $('.result-img').html('');
     } else {
-        $('.result-img').replaceWith(`<img src="${responseJson.message}" class="result-img">`)
+        $('.result-img').html(`<img src="${responseJson.message}" class="result-img">`)
         $('.result').removeClass('hidden');
     }
 }
